@@ -3,6 +3,8 @@ using DotNetEnv;
 
 Env.Load();
 
+//Create the env variables
+
 string putHostDB = Environment.GetEnvironmentVariable("DB_HOST");
 string putNameDB = Environment.GetEnvironmentVariable("DB_NAME");
 string putPortDB = Environment.GetEnvironmentVariable("DB_PORT");

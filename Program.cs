@@ -1,5 +1,7 @@
 
 using DotNetEnv;
+using Farm_API.data;
+using Microsoft.EntityFrameworkCore;
 
 Env.Load();
 
@@ -13,16 +15,12 @@ string putPasswordDB = Environment.GetEnvironmentVariable("DB_PASSWORD");
 
 var connectionString = $"server={putHostDB};port={putNameDB};database={putNameDB};uid={putUserNameDB};password={putPasswordDB}";
 
-
-
-
-
-
-
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseMySql(connectionString, ServerVersion.Parse("8.0.80-mysql")));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

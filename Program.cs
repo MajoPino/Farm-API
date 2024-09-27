@@ -13,7 +13,7 @@ string putPortDB = Environment.GetEnvironmentVariable("DB_PORT");
 string putUserNameDB = Environment.GetEnvironmentVariable("DB_USERNAME");
 string putPasswordDB = Environment.GetEnvironmentVariable("DB_PASSWORD");
 
-var connectionString = $"server={putHostDB};port={putNameDB};database={putNameDB};uid={putUserNameDB};password={putPasswordDB}";
+var connectionString = $"server={putHostDB};port={putPortDB};database={putNameDB};uid={putUserNameDB};password={putPasswordDB}";
 
 var builder = WebApplication.CreateBuilder(args);
 
